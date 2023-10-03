@@ -27,7 +27,7 @@ welcome: {
 
 const Header = () => {
     return (
-        <AppBar sx={styles.header}>
+        <AppBar sx={styles.header} position="sticky">
             <img src="/images/logo.svg" alt="logo da kpop for u"/>
             <Link color="secondary" sx={styles.link} underline="hover">Início</Link>
             <Link color="secondary" sx={styles.link} underline="hover">Categoria</Link>
