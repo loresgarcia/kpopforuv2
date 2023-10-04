@@ -1,5 +1,6 @@
 import { Container, Typography } from "@mui/material";
 import Card from "../Card";
+import { useGetAlbums } from "../../utils/useGetAlbums";
 
 const styles = {
   container: {
@@ -13,9 +14,10 @@ const styles = {
   }
 }
 
-const cards = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 const Main = () => {
+  const albums = useGetAlbums();
+
   return (
     <Container
       maxWidth="xl"
@@ -23,8 +25,8 @@ const Main = () => {
     >
       <Typography variant="h3">Mais vendidos</Typography>
       <div style={styles.cards}>
-        {cards.map((card, index) => (
-          <Card key={index} />
+        {albums.map((album) => (
+          <Card key={album.id} {...album}/>
         ))}
       </div>
     </Container>
